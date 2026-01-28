@@ -5,7 +5,7 @@ Designed for performance, accessibility, and easy customization.
 
 ## Live Demo
 
-- Website: https://your-portfolio-link.com
+- Website:
 
 ## Tech Stack
 
@@ -37,5 +37,5 @@ Designed for performance, accessibility, and easy customization.
 ### 1) Clone the project
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/AlAminNahid/portfolio
 ```

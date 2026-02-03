@@ -15,7 +15,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div className="fixed w-full h-20 shadow-xl z-[100] bg-white/70 backdrop-blur-md shadow">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Image src={"/assets/NavLogo.png"} alt={"/"} width={125} height={50} />
         <div>
@@ -57,7 +57,9 @@ export default function NavBar() {
       </div>
 
       <div
-        className={nav ? "fixed left-0 top-0 w-full h-screen bg-black/70" : ""}
+        className={
+          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
+        }
       >
         <div
           className={

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import ProjectOne from "../../public/assets/projects/one.png";
 import ProjectTwo from "../../public/assets/projects/two.png";
 
@@ -27,11 +26,15 @@ export default function Projects() {
               <p className="pb-4 pt-2 text-black text-center">
                 ReactJS, NextJS, NestJS, PostgreSQL
               </p>
-              <Link href="/">
+              <a
+                href="https://github.com/AlAminNahid/Mess_Management_System"
+                target="_blank"
+                rel="nooppener noreferrer"
+              >
                 <p className="text-center py-3 px-6 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                  More Info
+                  GitHub
                 </p>
-              </Link>
+              </a>
             </div>
           </div>
           <div className="relative w-full h-[300px] shadow-xl shadow-gray-400 rounded-xl overflow-hidden group">
@@ -42,7 +45,6 @@ export default function Projects() {
               className="object-cover group-hover:opacity-10 transition duration-300"
             />
 
-            {/* Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
               <h3 className="text-2xl text-black tracking-wider text-center">
                 Clinic Management System
@@ -50,11 +52,15 @@ export default function Projects() {
               <p className="pb-4 pt-2 text-black text-center">
                 HTML, CSS, JavaScript, PHP
               </p>
-              <Link href="/">
+              <a
+                href="https://github.com/AlAminNahid/Clinic_Management_System"
+                target="_blank"
+                rel="nooppener noreferrer"
+              >
                 <p className="text-center py-3 px-6 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                  More Info
+                  GitHub
                 </p>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

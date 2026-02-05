@@ -8,7 +8,7 @@ export default function Education() {
         <h2 className="py-4">Academic Background</h2>
 
         <div className="mt-8 space-y-6">
-          <div className="p-6 shadow-xl rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
+          <div className="p-6 shadow-xl rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl bg-white/70">
             <h3 className="text-xl font-bold">
               BSc in Computer Science & Engineering
             </h3>
@@ -24,7 +24,7 @@ export default function Education() {
             </p>
           </div>
 
-          <div className="p-6 shadow-xl rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
+          <div className="p-6 shadow-xl rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl bg-white/70">
             <h3 className="text-xl font-bold">
               Higher Secondary Certificate (HSC)
             </h3>
@@ -34,7 +34,7 @@ export default function Education() {
             </p>
           </div>
 
-          <div className="p-6 shadow-xl rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
+          <div className="p-6 shadow-xl rounded-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl bg-white/70">
             <h3 className="text-xl font-bold">
               Secondary School Certificate (SSC)
             </h3>

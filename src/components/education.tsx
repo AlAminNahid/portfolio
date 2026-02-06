@@ -16,7 +16,7 @@ export default function Education() {
               American International University–Bangladesh (AIUB)
             </p>
             <p className="text-gray-500 mt-1">2022 – Present</p>
-            <p className="text-gray-500 mt-1">CGPA: 4.64 / 4.00</p>
+            <p className="text-gray-500 mt-1">CGPA: 3.64 / 4.00</p>
             <p className="text-gray-700 mt-4 leading-relaxed">
               Concentrating on software development, web technologies, mobile
               development, data structures & algorithms, and machine learning

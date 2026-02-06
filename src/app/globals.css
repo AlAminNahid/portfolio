@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  @apply bg-[#EDE0D4] text-[#1f2937] tracking-wide;
+  @apply bg-[#E0E1DD] text-[#1f2937] tracking-wide;
 }
 
 h1,

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { useState } from "react";
+import { SiLeetcode } from "react-icons/si";
 
 export default function NavBar() {
   const [nav, setNav] = useState<boolean>(false);
@@ -134,16 +135,41 @@ export default function NavBar() {
               <p className="uppercase tracking-widest text-[#5651e5]">
                 Let's Connect
               </p>
-              <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <FaLinkedinIn />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <FaGithub />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <AiOutlineMail />
-                </div>
+              <div className="flex items-center justify-between max-w-[330px] m-auto py-4 ">
+                <a
+                  href={
+                    "https://www.linkedin.com/in/al-amin-hossain-nahid-876858193/"
+                  }
+                  target="_blank"
+                  rel="nooppener noreferrer"
+                >
+                  <div className="rounded-full shadow-lg bg-white/70 shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <FaLinkedinIn />
+                  </div>
+                </a>
+                <a
+                  href="https://github.com/AlAminNahid"
+                  target="_blank"
+                  rel="nooppener noreferrer"
+                >
+                  <div className="rounded-full shadow-lg bg-white/70 shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <FaGithub />
+                  </div>
+                </a>
+                <a
+                  href="https://leetcode.com/u/al_aminnahid11/"
+                  target="_blank"
+                  rel="nooppener noreferrer"
+                >
+                  <div className="rounded-full shadow-lg bg-white/70 shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <SiLeetcode />
+                  </div>
+                </a>
+                <a href="mailto:robin.nahid123@gmail.com">
+                  <div className="rounded-full shadow-lg bg-white/70 shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <AiOutlineMail />
+                  </div>
+                </a>
               </div>
             </div>
           </div>

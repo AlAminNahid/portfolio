@@ -1,3 +1,7 @@
+"use client";
+import axios from "axios";
+import { FormEvent, useState, useEffect } from "react";
+import { contactSchema } from "@/validation/contactSchema";
 import Image from "next/image";
 import Link from "next/link";
 import Contact from "../../public/assets/contact-us.png";
@@ -6,6 +10,73 @@ import { AiOutlineMail } from "react-icons/ai";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 export default function ContactUS() {
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
+  const [messageBox, setMessageBox] = useState<string>("");
+  const [success, setSuccess] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
+
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess(false);
+        setError("");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+
+    setError("");
+    setSuccess(false);
+
+    const result = contactSchema.safeParse({
+      name,
+      phone,
+      email,
+      subject,
+      messageBox,
+    });
+
+    if (!result.success) {
+      const firstError = result.error.issues[0].message;
+      setError(firstError);
+      console.log("Validation Error:", firstError);
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:3000/contact", {
+        name,
+        phone,
+        email,
+        subject,
+        messageBox,
+      });
+
+      console.log("Server Response:", response.data);
+      setSuccess(true);
+
+      setName("");
+      setPhone("");
+      setEmail("");
+      setSubject("");
+      setMessageBox("");
+    } catch (error: any) {
+      console.log(error);
+      setSuccess(false);
+
+      const errorMessage =
+        error.message || "Something went wrong. Please try again.";
+      setError(errorMessage);
+    }
+  };
+
   return (
     <div id="contact" className="w-full lg:h-screen ">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -25,7 +96,7 @@ export default function ContactUS() {
                 />
               </div>
               <div>
-                <h2 className="py-2">Name here</h2>
+                <h2 className="py-2">Al Amin Hossain Nahid</h2>
                 <p>Full-Stack Developer</p>
                 <p className="py-4">
                   I am available for Freelancer or full-time positions. Contact
@@ -69,13 +140,32 @@ export default function ContactUS() {
           {/* Right */}
           <div className="col-span-5 lg:col-span-3 w-full h-auto shadow-xl bg-white/70 shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form onSubmit={handleSubmit}>
+                {success && (
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-green-200 text-green-900 px-6 py-3 rounded-lg">
+                      Message sent successfully!
+                    </div>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-red-200 text-red-900 px-6 py-3 rounded-lg">
+                      {error}
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
+                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      placeholder="Enter your full name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -83,23 +173,32 @@ export default function ContactUS() {
                       Phone Number
                     </label>
                     <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
+                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      placeholder="Enter your phone number"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="flex flex-col py-2 ">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col py-2 ">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    placeholder="Enter your subject here"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col py-2 ">
@@ -107,9 +206,12 @@ export default function ContactUS() {
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows={10}
+                    placeholder="Enter your message here"
+                    value={messageBox}
+                    onChange={(e) => setMessageBox(e.target.value)}
                   ></textarea>
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <button type="submit" className="w-full p-4 text-gray-100 mt-4">
                   Send Message
                 </button>
               </form>

@@ -13,38 +13,6 @@ export default function Skills() {
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image
-                  src={"/assets/skills/c++.svg"}
-                  alt="/"
-                  width={64}
-                  height={64}
-                />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3>C++</h3>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 bg-white/70">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image
-                  src={"/assets/skills/java.svg"}
-                  alt="/"
-                  width={64}
-                  height={64}
-                />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3>Java</h3>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 bg-white/70">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image
                   src={"/assets/skills/html.png"}
                   alt="/"
                   width={64}
@@ -181,22 +149,6 @@ export default function Skills() {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <h3>NestJS</h3>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 bg-white/70">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image
-                  src={"/assets/skills/kotlin.svg"}
-                  alt="/"
-                  width={64}
-                  height={64}
-                />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3>Kotlin</h3>
               </div>
             </div>
           </div>

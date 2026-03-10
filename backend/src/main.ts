@@ -7,7 +7,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   app.enableCors({
-    origin: 'http://localhost:4001',
+    origin: ['http://localhost:4001', 'portfolio-six-murex-64.vercel.app'],
     credentials: true,
   });
 

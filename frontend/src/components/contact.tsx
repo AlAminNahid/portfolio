@@ -51,13 +51,16 @@ export default function ContactUS() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/contact", {
-        name,
-        phone,
-        email,
-        subject,
-        messageBox,
-      });
+      const response = await axios.post(
+        "https://portfolio-ak2z.onrender.com/contact",
+        {
+          name,
+          phone,
+          email,
+          subject,
+          messageBox,
+        },
+      );
 
       console.log("Server Response:", response.data);
       setSuccess(true);

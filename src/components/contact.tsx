@@ -51,7 +51,7 @@ export default function ContactUS() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/contact", {
+      const response = await axios.post("/api/contact", {
         name,
         phone,
         email,

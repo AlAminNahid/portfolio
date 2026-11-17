@@ -4,19 +4,18 @@ export const projects: Project[] = [
   {
     title: "Relgari",
     category: "Full-stack",
-    status: "In progress",
     summary:
-      "A train ticket booking concept inspired by Bangladesh Railway, in Bangla and English. It is a personal concept project: no real tickets are sold.",
+      "A train ticket site modelled on Bangladesh Railway, in Bangla and English. It searches real trains, holds exact seats, takes a demo payment, issues QR e-tickets and keeps a fair waiting room when a train is busy. No real tickets are sold and no money moves.",
     highlights: [
-      "Train search in a single row: stations, date and class",
-      "Bilingual in Bangla and English, rendered on the server",
-      "Login and registration in one boarding-pass-style popup",
-      "NestJS API with argon2id password hashing and HttpOnly session cookies",
-      "NID stored encrypted, with a keyed hash to block duplicate accounts",
-      "Rate-limited sign-in, with the same Zod rules in the browser and on the server",
-      "Real railway data: 225 stations and 122 intercity trains",
+      "Waiting room per train and date: 150 people at a time, with a visible place in line that survives a refresh",
+      "Tickets released in batches every 2 days at 5 PM, with each station getting its own share of seats",
+      "Seat map for S_Chair, Snigdha and AC (day seats and night berths), updated every 3 seconds from a cheap version check",
+      "Seats held for 5 minutes under a database lock, so the same seat can never be sold twice",
+      "Cancel only the seats you do not need and keep the rest, with the fee and refund shown first",
+      "QR e-tickets that anyone can verify, showing only the passenger's initials",
+      "Argon2id passwords, encrypted NID, hashed session tokens, and per-visitor rate limits behind a signed proxy",
+      "Real data: 225 stations and 122 intercity trains, with times in 12-hour Bangladesh style",
     ],
-    upcoming: ["Seat selection", "Tickets"],
     tags: [
       "Next.js",
       "TypeScript",

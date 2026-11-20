@@ -43,7 +43,7 @@ Every section of the site — hero, about, services, experience, research, works
 ## Project Structure
 
 ```
-portfolio-v1/
+portfolio/
 │
 ├── src/                          # Application source code
 │   ├── app/                      # Next.js App Router — routing concerns only
@@ -85,8 +85,8 @@ portfolio-v1/
 ### 1 — Clone
 
 ```bash
-git clone https://github.com/AlAminNahid/portfolio-v1.git
-cd portfolio-v1
+git clone https://github.com/AlAminNahid/portfolio.git
+cd portfolio
 ```
 
 ### 2 — Install dependencies

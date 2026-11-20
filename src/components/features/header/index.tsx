@@ -66,23 +66,6 @@ export default function Header() {
               </ArrowLink>
             </div>
           </Reveal>
-
-          <Reveal
-            delay={0.28}
-            className="mt-[clamp(48px,7vw,88px)] border-t border-border pt-5 lg:col-span-12"
-          >
-            <div className="grid gap-3.5 lg:grid-cols-12 lg:gap-x-6">
-              <p className="label text-fg lg:col-span-7">
-                {hero.specialisations}
-              </p>
-              <p className="label lg:col-span-4 lg:col-start-9">
-                Currently
-                <b className="mt-1 block font-sans text-[14.5px] font-medium tracking-normal text-fg normal-case">
-                  {hero.current}
-                </b>
-              </p>
-            </div>
-          </Reveal>
         </div>
       </Container>
     </section>

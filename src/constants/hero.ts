@@ -12,9 +12,6 @@ export const hero = {
   ],
   intro:
     "I'm an early-career software engineer at Kolpo LTD. I work on frontend features, backend APIs and AI workflows such as agentic chat, tool calling and knowledge retrieval.",
-  specialisations:
-    "Full-stack development · Agentic chat · Knowledge retrieval · Cloud deployment",
-  current: "Software Engineer, Kolpo LTD",
 } as const;
 
 export const ctaLinks: CtaLink[] = [
